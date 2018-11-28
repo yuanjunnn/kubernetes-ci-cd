@@ -23,7 +23,7 @@ node {
         sh "docker push ${imageName}"
 
     stage "Deploy"
-
+        sh "kubectl get pod,svc,deploy"
         kubernetesDeploy configs: "applications/${appName}/k8s/*.yaml", kubeconfigId: 'kenzan_kubeconfig'
 
 }
