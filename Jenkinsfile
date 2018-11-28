@@ -14,7 +14,8 @@ node {
     env.BUILD_TAG=tag
 
     stage "Build"
-        sh "pwd;whoami" 
+        sh "pwd;whoami;groups jenkins" 
+        sh "ls -al /var/run/docker.sock"
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
     
     stage "Push"
