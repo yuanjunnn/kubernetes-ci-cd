@@ -14,7 +14,7 @@ spec:
         tier: puzzle
     spec:
       containers:
-      - image: 127.0.0.1:30400/puzzle:339e542
+      - image: 127.0.0.1:30400/puzzle:$BUILD_TAG
         name: puzzle
         imagePullPolicy: Always
         lifecycle:
@@ -91,7 +91,7 @@ spec:
     serviceName: puzzle
     servicePort: 3000
   rules:
-  - host: puzzle.192.168.99.100.xip.io
+  - host: puzzle.127.0.0.1.xip.io
     http:
       paths:
       - path: /
